@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { WidgetProps } from '..';
 
-const PomodoroTimer: React.FC<WidgetProps> = () => {
+const PomodoroTimer: React.FC = () => {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);

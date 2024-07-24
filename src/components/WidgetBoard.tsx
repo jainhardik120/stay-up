@@ -2,6 +2,7 @@ import React from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import { useWidgetContext } from '../lib/WidgetProviderContext';
 import { widgetTypes } from '../widgets';
+import { WidgetStorageProvider } from '../lib/WidgetStorageContext';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -35,7 +36,11 @@ const WidgetBoard: React.FC = () => {
                   ×
                 </button>
               )}
-              <WidgetComponent id={widget.id} />
+              <WidgetStorageProvider id={widget.id} >
+                <div className='flex h-full w-full max-h-full max-w-full overflow-auto'>
+                  <WidgetComponent />
+                </div>
+              </WidgetStorageProvider>
             </div>
           );
         })}
