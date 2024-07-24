@@ -11,7 +11,7 @@ const DateTimeDisplay: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const timeString = currentDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+  const timeString = currentDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   const dateString = currentDateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
 
   return (

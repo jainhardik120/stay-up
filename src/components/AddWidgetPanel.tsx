@@ -2,7 +2,8 @@ import React from 'react';
 import { useWidgetContext } from '../lib/WidgetProviderContext';
 import { widgetTypes } from '../widgets';
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
+import { PencilIcon, PlusIcon } from 'lucide-react';
 
 const AddWidgetPanel = () => {
   const { addWidget, toggleEditMode, isEditMode } = useWidgetContext();
@@ -16,10 +17,9 @@ const AddWidgetPanel = () => {
   }
 
   return (
-    <div className="mb-4">
-
-      <button onClick={() => toggleEditMode()} className="bg-yellow-500 text-white px-4 py-2 rounded">Toggle Edit Mode</button>
-      {isEditMode && <button onClick={openModal} className="bg-red-500 text-white px-4 py-2 rounded">Add Widget</button>}
+    <div className="fixed top-4 right-4 z-10">
+      <button onClick={() => toggleEditMode()} className=" backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg"><PencilIcon className='w-5 h-5' /></button>
+      {isEditMode && <button onClick={openModal} className=" backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg"><PlusIcon className='w-5 h-5' /></button>}
       <Transition appear show={dialogOpened} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
