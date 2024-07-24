@@ -3,7 +3,7 @@ import { useWidgetContext } from '../lib/WidgetProviderContext';
 import { widgetTypes } from '../widgets';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { PencilIcon, PlusIcon } from 'lucide-react';
+import { CrossIcon, EditIcon, PencilIcon, PlusIcon, XIcon } from 'lucide-react';
 
 const AddWidgetPanel = () => {
   const { addWidget, toggleEditMode, isEditMode } = useWidgetContext();
@@ -17,9 +17,20 @@ const AddWidgetPanel = () => {
   }
 
   return (
-    <div className="fixed top-4 right-4 z-10">
-      <button onClick={() => toggleEditMode()} className=" backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg"><PencilIcon className='w-5 h-5' /></button>
-      {isEditMode && <button onClick={openModal} className=" backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg"><PlusIcon className='w-5 h-5' /></button>}
+    <div className="fixed top-4 right-4 z-10 flex flex-row items-center gap-2">
+      {isEditMode &&
+        <button onClick={openModal} className=" backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg flex flex-row items-center gap-2">
+          <PlusIcon className='w-5 h-5' /> Add Widget
+        </button>
+      }
+      <button onClick={() => toggleEditMode()} className="backdrop-blur-[60px] border border-[#ffffff33] shadow-md p-2 rounded-lg flex flex-row items-center gap-2">
+        {isEditMode ? <>
+          <XIcon className='w-5 h-5' /> Close
+        </>
+          : <>
+            <PencilIcon className='w-5 h-5' /> Edit
+          </>}
+      </button>
       <Transition appear show={dialogOpened} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
