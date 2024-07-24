@@ -1,7 +1,7 @@
 import React from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import { widgetTypes } from './Widgets';
-import { useWidgetContext } from './WidgetProviderContext';
+import { useWidgetContext } from '../lib/WidgetProviderContext';
+import { widgetTypes } from '../widgets';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 

@@ -1,6 +1,6 @@
-import NewsWidget from "./widgets/NewsWidget";
-import StockWidget from "./widgets/StockWidget";
-import WeatherWidget from "./widgets/WeatherWidget";
+import NewsWidget from "./NewsWidget";
+import StockWidget from "./StockWidget";
+import WeatherWidget from "./WeatherWidget";
 
 export interface WidgetData {
   id: string;

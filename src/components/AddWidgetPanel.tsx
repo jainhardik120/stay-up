@@ -1,6 +1,5 @@
-import React from 'react'
-import { useWidgetContext } from './WidgetProviderContext';
-import { widgetTypes } from './Widgets';
+import { useWidgetContext } from '../lib/WidgetProviderContext';
+import { widgetTypes } from '../widgets';
 
 const AddWidgetPanel = () => {
   const { addWidget, toggleEditMode } = useWidgetContext();

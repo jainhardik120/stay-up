@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { WidgetData, widgetTypes } from "./Widgets";
+import { WidgetData, widgetTypes } from "../widgets";
 
 interface WidgetProviderValues {
   addWidget: (type: any) => void;

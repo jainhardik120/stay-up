@@ -1,6 +1,6 @@
+import { WidgetProvider } from "../lib/WidgetProviderContext";
 import AddWidgetPanel from "./AddWidgetPanel";
 import WidgetBoard from "./WidgetBoard";
-import { WidgetProvider } from "./WidgetProviderContext";
 
 export default function App() {
   return (
