@@ -1,5 +1,6 @@
 import GoogleSlidesWidget from "./google-slides";
 import NewsWidget from "./NewsWidget";
+import SpotifyWidget from "./spotify";
 import StockWidget from "./StockWidget";
 import WeatherWidget from "./WeatherWidget";
 
@@ -12,5 +13,6 @@ export const widgetTypes = {
   weather: WeatherWidget,
   stock: StockWidget,
   news: NewsWidget,
-  slides:GoogleSlidesWidget
+  slides:GoogleSlidesWidget,
+  spotify:SpotifyWidget
 };

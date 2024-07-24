@@ -13,7 +13,13 @@
   },
   "devtools_page": "index.html",
   "permissions": [
-      "tabs",
-      "https://docs.google.com/*"
-  ]
+    "tabs",
+    "https://docs.google.com/*",
+    "storage",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "ae3abed086b145eea9f049345a78ecb5",
+    "scopes": ["user-library-read"]
+  }
 }
