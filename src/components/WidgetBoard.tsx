@@ -37,7 +37,7 @@ const WidgetBoard: React.FC = () => {
                 </button>
               )}
               <WidgetStorageProvider id={widget.id} >
-                <div className='flex h-full w-full max-h-full max-w-full overflow-auto'>
+                <div className='flex h-full w-full max-h-full max-w-full overflow-auto rounded-lg backdrop-blur border border-[#ffffff33] shadow-md'>
                   <WidgetComponent />
                 </div>
               </WidgetStorageProvider>

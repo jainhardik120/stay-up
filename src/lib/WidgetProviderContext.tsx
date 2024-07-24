@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { ChangeEvent, useContext, useEffect, useState } from "react";
 import { WidgetData, widgetTypes } from "../widgets";
 
 interface WidgetProviderValues {
@@ -9,6 +9,8 @@ interface WidgetProviderValues {
   layouts: {};
   isEditMode: boolean;
   toggleEditMode: () => void;
+  backgroundImage: string;
+  handleImageChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const WidgetProviderContext = React.createContext<WidgetProviderValues | undefined>(undefined);
@@ -62,6 +64,29 @@ export const WidgetProvider = ({ children }: {
     setWidgets(widgets.filter(widget => widget.id !== id));
   };
 
+  const [backgroundImage, setBackgroundImage] = useState('');
+
+  useEffect(() => {
+    // Load background image from localStorage on component mount
+    const savedImage = localStorage.getItem('backgroundImage');
+    if (savedImage) {
+      setBackgroundImage(savedImage);
+    }
+  }, []);
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target?.result as string;
+        setBackgroundImage(dataUrl);
+        localStorage.setItem('backgroundImage', dataUrl);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
 
   return (
     <WidgetProviderContext.Provider value={{
@@ -72,6 +97,8 @@ export const WidgetProvider = ({ children }: {
       widgets: widgets,
       isEditMode: isEditMode,
       toggleEditMode: toggleEditMode,
+      backgroundImage: backgroundImage,
+      handleImageChange: handleImageChange,
     }}>
       {children}
     </WidgetProviderContext.Provider>
