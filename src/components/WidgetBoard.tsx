@@ -35,7 +35,7 @@ const WidgetBoard: React.FC = () => {
                   ×
                 </button>
               )}
-              <WidgetComponent />
+              <WidgetComponent id={widget.id} />
             </div>
           );
         })}

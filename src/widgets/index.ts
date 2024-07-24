@@ -1,6 +1,11 @@
+import googleSlides from "./google-slides";
 import NewsWidget from "./NewsWidget";
 import StockWidget from "./StockWidget";
 import WeatherWidget from "./WeatherWidget";
+
+export interface WidgetProps {
+  id: string;
+}
 
 export interface WidgetData {
   id: string;
@@ -11,4 +16,5 @@ export const widgetTypes = {
   weather: WeatherWidget,
   stock: StockWidget,
   news: NewsWidget,
+  googleSlides: googleSlides,
 };

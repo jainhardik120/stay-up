@@ -1,4 +1,6 @@
-const NewsWidget: React.FC = () => (
+import { WidgetProps } from ".";
+
+const NewsWidget: React.FC<WidgetProps> = () => (
   <div className="bg-red-200 p-4 w-full h-full">
     <h2 className="text-xl font-bold">News</h2>
     <p>Latest headlines...</p>
