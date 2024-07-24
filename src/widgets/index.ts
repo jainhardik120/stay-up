@@ -1,8 +1,6 @@
 import GoogleSlidesWidget from "./google-slides";
-import NewsWidget from "./NewsWidget";
+import PomodoroTimer from "./pomodore-timer";
 import SpotifyWidget from "./spotify";
-import StockWidget from "./StockWidget";
-import WeatherWidget from "./WeatherWidget";
 
 export interface WidgetData {
   id: string;
@@ -10,9 +8,7 @@ export interface WidgetData {
 }
 
 export const widgetTypes = {
-  weather: WeatherWidget,
-  stock: StockWidget,
-  news: NewsWidget,
+  pomodoro:PomodoroTimer,
   slides:GoogleSlidesWidget,
-  spotify:SpotifyWidget
+  spotify: SpotifyWidget,
 };
