@@ -11,5 +11,9 @@
     "48": "logo192.png",
     "128": "logo192.png"
   },
-  "devtools_page": "index.html"
+  "devtools_page": "index.html",
+  "permissions": [
+      "tabs",
+      "https://docs.google.com/*"
+  ]
 }
