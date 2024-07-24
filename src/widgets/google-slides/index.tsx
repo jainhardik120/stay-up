@@ -1,6 +1,5 @@
 import React from 'react';
 const presentationId = "1LhNAv_6WSfmu9_U33tVaskW8YuFj6UJelWdjdVWV1kk";
-
 const GoogleSlidesWidget: React.FC = () => {
   const embedUrl = `https://docs.google.com/presentation/d/${presentationId}/embed?start=false&loop=true&delayms=3000`;
 

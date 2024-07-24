@@ -1,5 +1,6 @@
 import GoogleSlidesWidget from "./google-slides";
 import PomodoroTimer from "./pomodore-timer";
+import SpotifyWidget from "./spotify";
 
 export interface WidgetData {
   id: string;
@@ -7,6 +8,7 @@ export interface WidgetData {
 }
 
 export const widgetTypes = {
-  slides: GoogleSlidesWidget,
-  timer: PomodoroTimer
+  pomodoro:PomodoroTimer,
+  slides:GoogleSlidesWidget,
+  spotify: SpotifyWidget,
 };
