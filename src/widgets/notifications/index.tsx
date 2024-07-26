@@ -17,7 +17,7 @@ const NotificationList: React.FC = () => {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/slide/notifications`);
+        const response = await axios.get(`${API_URL}/api/notifications`);
         setNotifications(response.data.notifications);
         setLoading(false);
       } catch (error) {

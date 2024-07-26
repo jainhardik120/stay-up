@@ -6,6 +6,7 @@ import DialogBox from './DialogBox';
 const AuthPage: React.FC = () => {
   const { user, login, logout, register } = useAuthContext();
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
 
@@ -13,7 +14,7 @@ const AuthPage: React.FC = () => {
     e.preventDefault();
     try {
       if (isRegistering) {
-        await register(email, password);
+        await register(email, password, name);
       } else {
         await login(email, password);
       }
@@ -65,6 +66,20 @@ const AuthPage: React.FC = () => {
                   required
                 />
               </div>
+              {
+                isRegistering ? <>
+                  <div>
+                    <label htmlFor="name">Name:</label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
+                  </div>
+                </> : null
+              }
               <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
             </form>
             <button onClick={() => setIsRegistering(!isRegistering)}>

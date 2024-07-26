@@ -10,7 +10,7 @@ interface User {
 
 interface AuthValues {
   login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string) => Promise<void>;
+  register: (email: string, password: string, name : string) => Promise<void>;
   user: User | null;
   logout: () => Promise<void>;
 }
@@ -44,11 +44,9 @@ export const Auth = ({ children }: {
     }
   };
 
-  const register = async (email: string, password: string) => {
+  const register = async (email: string, password: string, name : string) => {
     try {
-      const response = await axios.post(`${API_URL}/api/auth/register`, { email, password }, {
-        withCredentials: true
-      });
+      const response = await axios.post(`${API_URL}/api/auth/register`, { email, password, name });
       setUser(response.data.user);
     } catch (error) {
       console.error("Registration failed:", error);
@@ -57,9 +55,7 @@ export const Auth = ({ children }: {
 
   const logout = async () => {
     try {
-      await axios.post(`${API_URL}/api/auth/logout`, {}, {
-        withCredentials: true
-      });
+      await axios.post(`${API_URL}/api/auth/logout`, {});
       setUser(null);
     } catch (error) {
       console.error("Logout failed:", error);

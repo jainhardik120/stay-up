@@ -9,8 +9,8 @@ export interface WidgetData {
 }
 
 export const widgetTypes = {
-  pomodoro:PomodoroTimer,
-  slides:GoogleSlidesWidget,
+  pomodoro: PomodoroTimer,
+  slides: GoogleSlidesWidget,
   spotify: SpotifyWidget,
-  notifications : NotificationList
+  notifications: NotificationList
 };
