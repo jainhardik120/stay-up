@@ -1,0 +1,1 @@
+export const API_URL = 'https://stay-up-backend.vercel.app/';

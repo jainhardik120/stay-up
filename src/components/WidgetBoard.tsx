@@ -8,9 +8,7 @@ import { XIcon } from 'lucide-react';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const WidgetBoard: React.FC = () => {
-
   const { widgets, layouts, onLayoutChange, removeWidget, isEditMode } = useWidgetContext();
-
   return (
     <div className="p-4">
       <ResponsiveGridLayout
@@ -24,7 +22,7 @@ const WidgetBoard: React.FC = () => {
         margin={[10, 10]}
         width={window.innerWidth - 32}
         onLayoutChange={onLayoutChange}
-        compactType={null}
+        compactType={'vertical'}
       >
         {widgets.map(widget => {
           const WidgetComponent = widgetTypes[widget.type];
