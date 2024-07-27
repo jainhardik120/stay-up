@@ -64,10 +64,9 @@ export const WidgetProvider = ({ children }: {
     setWidgets(widgets.filter(widget => widget.id !== id));
   };
 
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState('5109856.jpg');
 
   useEffect(() => {
-    // Load background image from localStorage on component mount
     const savedImage = localStorage.getItem('backgroundImage');
     if (savedImage) {
       setBackgroundImage(savedImage);

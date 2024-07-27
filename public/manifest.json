@@ -1,6 +1,6 @@
 {
-  "name": "Chrome React Extension",
-  "description": "Template for creating Chrome extensions with React",
+  "name": "Stay Up Widget Board",
+  "description": "Widget Board for a Corporate environment to boost productivity",
   "version": "1.0",
   "manifest_version": 3,
   "chrome_url_overrides": {
@@ -14,12 +14,6 @@
   "devtools_page": "index.html",
   "permissions": [
     "tabs",
-    "https://docs.google.com/*",
-    "storage",
-    "identity"
-  ],
-  "oauth2": {
-    "client_id": "ae3abed086b145eea9f049345a78ecb5",
-    "scopes": ["user-library-read"]
-  }
+    "storage"
+  ]
 }
